@@ -1,3 +1,5 @@
+var numberOfPizzas = 0
+
 function PizzaConstructor(){
   this.size = "";
   this.smallPrice = 13;
@@ -33,13 +35,40 @@ $(document).ready(function() {
     newPizza.size = $("select.size").val();
     var meatTop = $("select.meatTop").val();
     var vegTop = $("select.vegTop").val();
+    numberOfPizzas ++;
     newPizza.meat(meatTop);
     newPizza.vegetables(vegTop);
     debugger;
-    $("#first-pizza").append("<h1>" + newPizza.size + "</h1><ul" + " " + "id='first-pizzaTop'></ul>");
-    $("ul#first-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
-    $("ul#first-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
-
+    if (numberOfPizzas === 1){
+      $("#first-pizza").append("<h3>One " + newPizza.size + " pizza</h3><ul" + " " + "id='first-pizzaTop'></ul>");
+      $("ul#first-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+      $("ul#first-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      if (newPizza.size === "small") {
+        $("ul#first-pizzaTop").append("<li>" + newPizza.smallPrice + "</li>")
+      } else {
+        $("ul#first-pizzaTop").append("<li>" + newPizza.largePrice + "</li>")
+      }
+    } else if (numberOfPizzas === 2) {
+      $("#second-pizza").append("<h3>One " + newPizza.size + " pizza</h3><ul" + " " + "id='second-pizzaTop'></ul>");
+      $("ul#second-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+      $("ul#second-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      if (newPizza.size === "small") {
+        $("ul#second-pizzaTop").append("<li>" + newPizza.smallPrice + "</li>")
+      } else {
+        $("ul#second-pizzaTop").append("<li>" + newPizza.largePrice + "</li>")
+      }
+    }  else if (numberOfPizzas === 3) {
+      $("#third-pizza").append("<h3>One " + newPizza.size + " pizza</h3><ul" + " " + "id='third-pizzaTop'></ul>");
+      $("ul#third-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+      $("ul#third-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      if (newPizza.size === "small") {
+        $("ul#third-pizzaTop").append("<li>" + newPizza.smallPrice + "</li>")
+      } else {
+        $("ul#third-pizzaTop").append("<li>" + newPizza.largePrice + "</li>")
+      }
+    } else {
+      alert("Enough already")
+    }
   });
 });
 
