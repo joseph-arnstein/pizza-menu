@@ -23,7 +23,7 @@
 
         <div class="form-group">
           <label for="size">Size</label>
-          <select id="size" class="form-control">
+          <select class="form-control size">
             <option value="small">13" pie</option>
             <option value="large">18" pie</option>
           </select>
@@ -31,17 +31,19 @@
 
         <div class="form-group">
           <label for="meatTop">Meat Toppings</label>
-          <select id="meatTop" class="form-control">
+          <select class="form-control meatTop">
             <option value="pepperoni">Pepperoni</option>
             <option value="sausage">Sausage</option>
             <option value="bacon">Bacon</option>
             <option value="salami">Salami</option>
           </select>
         </div>
+        <!-- <span id="moreMeat"></span>
+        <button class="btn btn-default" id="add-meat">More Meat</button> -->
 
         <div class="form-group">
           <label for="vegTop">Vegetable Toppings</label>
-          <select id="vegTop" class="form-control">
+          <select class="form-control vegTop">
             <option value="olives">Olives</option>
             <option value="spinach">Spinach</option>
             <option value="pinapple">Pineapple</option>
@@ -49,8 +51,15 @@
             <option value="peppers">Peppers</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Check</button>
+        <button type="submit" class="btn btn-primary">Sumbit Order</button>
       </form>
+    </div>
+
+    <div class="order">
+      <h4>Order:</h4>
+      <p><span id="first-pizza"></span></p>
+      <ul id="first-pizzaTop">
+      </ul>
     </div>
 
   </body>

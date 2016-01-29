@@ -1,4 +1,5 @@
 function PizzaConstructor(){
+  this.size = "";
   this.smallPrice = 13;
   this.largePrice = 18;
   this.meatToppings = [];
@@ -25,6 +26,23 @@ PizzaConstructor.prototype.vegetables = function (veg) {
   this.vegetableToppings.push(veg);
 };
 
-// $(document).ready(function() {
-//
-// });
+$(document).ready(function() {
+  $("#blanks form").submit(function(event){
+    event.preventDefault();
+    var newPizza = new PizzaConstructor;
+    newPizza.size = $("select.size").val();
+    var meatTop = $("select.meatTop").val();
+    var vegTop = $("select.vegTop").val();
+    newPizza.meat(meatTop);
+    newPizza.vegetables(vegTop);
+    debugger;
+    $("#first-pizza").append(newPizza.size);
+    $("ul#first-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+    $("ul#first-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+
+  });
+});
+
+// $("#add-meat").click(function(){
+// //   $("#moreMeat").append('<div class="form-group"><label for="meatTop">Meat Toppings</label><select class="form-control meatTop"><option value="pepperoni">Pepperoni</option><option value="sausage">Sausage</option><option value="bacon">Bacon</option><option value="salami">Salami</option></select></div>')
+// // })
