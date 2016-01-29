@@ -36,35 +36,55 @@ $(document).ready(function() {
     var meatTop = $("select.meatTop").val();
     var vegTop = $("select.vegTop").val();
     numberOfPizzas ++;
-    newPizza.meat(meatTop);
-    newPizza.vegetables(vegTop);
+    if (meatTop !== "none") {
+      newPizza.meat(meatTop);
+    };
+    if (vegTop !== "none") {
+      newPizza.vegetables(vegTop);
+    };
     debugger;
+
+// Create and display unordered list for pizzas & properties //
+
+
     if (numberOfPizzas === 1){
       $("#first-pizza").append("<h3>One " + newPizza.size + " pizza</h3><ul" + " " + "id='first-pizzaTop'></ul>");
-      $("ul#first-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
-      $("ul#first-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      if (meatTop !== "none") {
+        $("ul#first-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+      }
+      if (vegTop !== "none"){
+        $("ul#first-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      }
       if (newPizza.size === "small") {
-        $("ul#first-pizzaTop").append("<li>" + newPizza.smallPrice + "</li>")
+        $("ul#first-pizzaTop").append("<li>$" + newPizza.smallPrice + "</li>")
       } else {
-        $("ul#first-pizzaTop").append("<li>" + newPizza.largePrice + "</li>")
+        $("ul#first-pizzaTop").append("<li>$" + newPizza.largePrice + "</li>")
       }
     } else if (numberOfPizzas === 2) {
       $("#second-pizza").append("<h3>One " + newPizza.size + " pizza</h3><ul" + " " + "id='second-pizzaTop'></ul>");
-      $("ul#second-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
-      $("ul#second-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      if (meatTop !== "none"){
+        $("ul#second-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+      }
+      if (vegTop !== "none"){
+        $("ul#second-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      }
       if (newPizza.size === "small") {
-        $("ul#second-pizzaTop").append("<li>" + newPizza.smallPrice + "</li>")
+        $("ul#second-pizzaTop").append("<li>$" + newPizza.smallPrice + "</li>")
       } else {
-        $("ul#second-pizzaTop").append("<li>" + newPizza.largePrice + "</li>")
+        $("ul#second-pizzaTop").append("<li>$" + newPizza.largePrice + "</li>")
       }
     }  else if (numberOfPizzas === 3) {
       $("#third-pizza").append("<h3>One " + newPizza.size + " pizza</h3><ul" + " " + "id='third-pizzaTop'></ul>");
-      $("ul#third-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
-      $("ul#third-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      if (meatTop !== "none"){
+        $("ul#third-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
+      }
+      if (vegTop !== "none"){
+        $("ul#third-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
+      }
       if (newPizza.size === "small") {
-        $("ul#third-pizzaTop").append("<li>" + newPizza.smallPrice + "</li>")
+        $("ul#third-pizzaTop").append("<li>$" + newPizza.smallPrice + "</li>")
       } else {
-        $("ul#third-pizzaTop").append("<li>" + newPizza.largePrice + "</li>")
+        $("ul#third-pizzaTop").append("<li>$" + newPizza.largePrice + "</li>")
       }
     } else {
       alert("Enough already")
