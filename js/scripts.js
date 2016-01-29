@@ -36,7 +36,7 @@ $(document).ready(function() {
     newPizza.meat(meatTop);
     newPizza.vegetables(vegTop);
     debugger;
-    $("#first-pizza").append(newPizza.size);
+    $("#first-pizza").append("<h1>" + newPizza.size + "</h1><ul" + " " + "id='first-pizzaTop'></ul>");
     $("ul#first-pizzaTop").append("<li>" + newPizza.meatToppings + "</li>");
     $("ul#first-pizzaTop").append("<li>" + newPizza.vegetableToppings + "</li>");
 
