@@ -8,9 +8,50 @@
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src ="js/scripts.js"></script>
-    <title>ALERT YOUR TITLE GOES HERE BUDDY</title>
+    <title>Pizza Joe's</title>
   </head>
   <body>
+
+    <div class="container">
+      <h2>Build your own</h2>
+      <p>Choose your size and toppings</p>
+    </div>
+
+
+    <div class="container" id="blanks">
+      <form>
+
+        <div class="form-group">
+          <label for="size">Size</label>
+          <select id="size" class="form-control">
+            <option value="small">13" pie</option>
+            <option value="large">18" pie</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="meatTop">Meat Toppings</label>
+          <select id="meatTop" class="form-control">
+            <option value="pepperoni">Pepperoni</option>
+            <option value="sausage">Sausage</option>
+            <option value="bacon">Bacon</option>
+            <option value="salami">Salami</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="vegTop">Vegetable Toppings</label>
+          <select id="vegTop" class="form-control">
+            <option value="olives">Olives</option>
+            <option value="spinach">Spinach</option>
+            <option value="pinapple">Pineapple</option>
+            <option value="onion">Onion</option>
+            <option value="peppers">Peppers</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Check</button>
+      </form>
+    </div>
 
   </body>
 </html>
