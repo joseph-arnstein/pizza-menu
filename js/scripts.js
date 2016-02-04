@@ -37,8 +37,11 @@ OrderTotal.prototype.getTotal = function(){
   this.totalPrice = total;
 };
 
+var order = new OrderTotal;
+
 $(document).ready(function() {
   $("#blanks form").submit(function(event){
+    debugger;
     event.preventDefault();
     var newPizza = new PizzaConstructor;
     var size = $("select.size").val();
@@ -49,28 +52,36 @@ $(document).ready(function() {
     if (meatTop !== "none") {newPizza.meat(meatTop);};
     if (vegTop !== "none") {newPizza.vegetables(vegTop);};
 
-    var order = new OrderTotal;
     order.addPizza(newPizza);
 
     // display
-
+    $("#show").empty();
     order.pizzas.forEach(function(pizza){
       $("#show").append(
         '<div class="col-sm-4">'+
           '<h3>'+pizza.size+'</h3>'+
-            '<ul>'+
-              '<li>'+pizza.toppings[0]+'</li>'+
-              '<li>'+pizza.toppings[1]+'</li>'+
-              '<li>$'+pizza.price+'</li>'+
+            '<ul id="pie'+order.pizzas.indexOf(pizza)+'">'+
+              // '<li>'+pizza.toppings[0]+'</li>'+
+              // '<li>'+pizza.toppings[1]+'</li>'+
+              // '<li>$'+pizza.price+'</li>'+
             '</ul>'+
         '</div>'
       );
+
     });
+    order.pizzas.forEach(function(pizza){
+      pizza.toppings.forEach(function(topping){
+        $("ul#pie"+order.pizzas.indexOf(pizza)).last().append('<li>'+topping+'</li>');
+      });
+    });
+    debugger;
     order.getTotal();
     var bigPrice = order.totalPrice;
-    debugger;
     $(".total").text("$"+bigPrice);
+    debugger;
   });
+
+
 });
 
 
