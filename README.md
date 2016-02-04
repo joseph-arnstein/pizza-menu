@@ -2,7 +2,7 @@
 
 ##### Epicodus Section:  JavaScript OO - Pizza
 
-#### By Epicodus Lessons
+#### By Joey Arnstein
 
 ## Description
 
